@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Sifre3 {
+
+    public static void main(String[] args) {
+        System.out.println("Hoşgeldiniz şimdi sizden şifre üretmek için veriler isteyeceğiz.");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("*************** 5 tane veri giriniz. ***************");
+        System.out.println("");
+        Scanner s = new Scanner(System.in);
+        String[] veri = new String[5];
+        for (int i = 0; i < veri.length; i++) {
+            System.out.println((i + 1) + ".veriyi giriniz.");
+            veri[i] = s.next();
+        }
+        for (int i = 0; i < veri.length; i++) {
+            int sayi = (int) (Math.random() * veri.length - 1);
+            int sayi2 = (int) (Math.random() * veri.length - 1);
+            String kelime = veri[sayi];
+            veri[sayi] = veri[sayi2];
+            veri[sayi2] = kelime;
+        }
+        for (int i = 0; i < veri.length; i++) {
+            System.out.print(veri[i]);
+        }
+    }
+}
